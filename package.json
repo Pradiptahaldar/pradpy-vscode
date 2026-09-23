@@ -2,7 +2,7 @@
     "name": "pradpy-vscode",
     "displayName": "PradPyLang",
     "description": "Language support and tooling for the PradPyLang programming language.",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "publisher": "pradiptahaldar",
     "icon": "images/icon.png",
     "license": "SEE LICENSE IN LICENSE",

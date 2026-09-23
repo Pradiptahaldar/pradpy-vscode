@@ -12,6 +12,7 @@ Official Visual Studio Code extension for **PradPyLang**, a modern interpreted p
 - Bundled standalone PradPyLang runtime
 - Run `.prad` files without installing Python
 - Command-line execution with `pradpy`
+- Type conversion with `number()`, `boolean()`, and `list()`
 
 ## Getting Started
 
@@ -39,13 +40,57 @@ Adult
 
 PradPyLang supports interactive user input using `ask()`.
 
+### String Input
+
 ```prad
 keep name = ask("What is your name? ")
 
 show("Hello, " + name)
 ```
 
-`ask()` displays a prompt, waits for keyboard input, and returns the entered value as a string.
+`ask()` returns the entered value as a string.
+
+### Number Input
+
+Use `number()` to convert input into an integer or decimal number.
+
+```prad
+keep age = number(ask("How old are you? "))
+
+show(age)
+```
+
+### Boolean Input
+
+Use `boolean()` to convert `yes` or `no` into a boolean value.
+
+```prad
+keep answer = boolean(ask("Continue? "))
+
+when answer {
+    show("Continuing")
+} otherwise {
+    show("Stopping")
+}
+```
+
+### List Input
+
+Use `list()` to convert comma-separated input into a list.
+
+```prad
+keep values = list(ask("Enter values: "))
+
+show(values)
+```
+
+For example, entering:
+
+```text
+1, 2.5, hello, yes, no
+```
+
+produces a list containing numbers, strings, and boolean values.
 
 ## Running from the Terminal
 
