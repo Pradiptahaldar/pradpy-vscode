@@ -2,14 +2,22 @@
     "name": "pradpy-vscode",
     "displayName": "PradPyLang",
     "description": "Language support and tooling for the PradPyLang programming language.",
-    "version": "1.0.2",
+    "version": "1.0.4",
     "publisher": "pradiptahaldar",
-    "license": "MIT",
+    "icon": "images/icon.png",
+    "license": "SEE LICENSE IN LICENSE",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Pradiptahaldar/pradpy-vscode.git"
+    },
     "files": [
         "out",
         "language",
         "runtime",
-        "syntaxes"
+        "syntaxes",
+        "README.md",
+        "LICENSE",
+        "images"
     ],
     "engines": {
         "vscode": "^1.85.0"
