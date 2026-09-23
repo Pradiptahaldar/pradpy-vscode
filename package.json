@@ -1,0 +1,71 @@
+{
+    "name": "pradpy-vscode",
+    "displayName": "PradPyLang",
+    "description": "Language support and tooling for the PradPyLang programming language.",
+    "version": "1.0.2",
+    "publisher": "pradiptahaldar",
+    "license": "MIT",
+    "files": [
+        "out",
+        "language",
+        "runtime",
+        "syntaxes"
+    ],
+    "engines": {
+        "vscode": "^1.85.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    
+    "main": "./out/extension.js",
+    "contributes": {
+        "languages": [
+            {
+                "id": "pradpy",
+                "aliases": [
+                    "PradPyLang",
+                    "pradpy"
+                ],
+                "extensions": [
+                    ".prad"
+                ],
+                "configuration": "./language/language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "pradpy",
+                "scopeName": "source.pradpy",
+                "path": "./syntaxes/pradpy.tmLanguage.json"
+            }
+        ],
+        "commands": [
+            {
+                "command": "pradpy.runFile",
+                "title": "Run PradPyLang"
+            }
+        ],
+        "menus": {
+            "editor/title": [
+                {
+                    "command": "pradpy.runFile",
+                    "when": "editorLangId == pradpy",
+                    "group": "navigation",
+                    "icon": "$(play)"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "package": "vsce package"
+    },
+    "devDependencies": {
+        "@types/node": "^24.0.0",
+        "@types/vscode": "^1.85.0",
+        "@vscode/vsce": "^3.0.0",
+        "typescript": "^5.0.0"
+    }
+}

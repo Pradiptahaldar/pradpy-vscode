@@ -1,0 +1,97 @@
+{
+    "scopeName": "source.pradpy",
+    "name": "PradPyLang",
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#booleans"
+        },
+        {
+            "include": "#operators"
+        },
+        {
+            "include": "#functions"
+        }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.number-sign.pradpy",
+                    "match": "#.*$"
+                },
+                {
+                    "name": "comment.block.pradpy",
+                    "begin": "##",
+                    "end": "##"
+                }
+            ]
+        },
+        "strings": {
+            "name": "string.quoted.double.pradpy",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.pradpy",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.float.pradpy",
+                    "match": "\\b\\d+\\.\\d+\\b"
+                },
+                {
+                    "name": "constant.numeric.integer.pradpy",
+                    "match": "\\b\\d+\\b"
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.pradpy",
+                    "match": "\\b(keep|show|ask|when|orwhen|otherwise|repeat|start|each|from|to|step|return|task|in)\\b"
+                }
+            ]
+        },
+        "booleans": {
+            "patterns": [
+                {
+                    "name": "constant.language.boolean.pradpy",
+                    "match": "\\b(yes|no|empty)\\b"
+                }
+            ]
+        },
+        "operators": {
+            "patterns": [
+                {
+                    "name": "keyword.operator.pradpy",
+                    "match": "(==|!=|<=|>=|\\+=|-=|\\*=|/=|=|<|>|\\+|-|\\*|/|%|&&|\\|\\||!)"
+                }
+            ]
+        },
+        "functions": {
+            "patterns": [
+                {
+                    "name": "entity.name.function.pradpy",
+                    "match": "\\b[A-Za-z_][A-Za-z0-9_]*(?=\\s*\\()"
+                }
+            ]
+        }
+    }
+}
